@@ -1,0 +1,17 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "HistoryAPI.Services.Grpc";
+
+import "google/protobuf/wrappers.proto";
+
+service GrpcHistoryCreator{
+	rpc CreateHistory(HistoryCreateModel) returns (google.protobuf.BoolValue);
+}
+
+message HistoryCreateModel{
+	int32 bookId = 1;
+    int32 visitorId = 2;
+    int64 borrowedDateTicks = 3;
+    int64 returnedDateTicks = 4;
+    bool isReturnedLate = 5;
+}

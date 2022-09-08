@@ -1,0 +1,19 @@
+{
+  "LibraryTransit": {
+    "connection": {
+      "host": "localhost",
+      "port": 5672,
+
+      "virtualHost": "Library_virtual_host",
+
+      "login": "guest",
+      "password": "guest"
+    }
+  },
+
+  "Grpc": {
+    "HistoryCreator": {
+      "url": "https://localhost:5001"
+    }
+  }
+}
