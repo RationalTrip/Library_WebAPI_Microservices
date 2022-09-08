@@ -16,13 +16,17 @@ Configuration:
  
 Communication between service
 - Service AuthorAPI. After a new Author is created, information about him is published using RabbitMQ and MassTransit. BookAPI consumes it to update the local BookAPIs database.
+
 ![Author was created](images/AuthorWasCreated.JPG)
  
 - Service BookAPI. After a new Book is created, information about it is published using RabbitMQ and MassTransit. BorrowedAPI and HistoryAPI consume it to update their local databases.
+
 ![Book was created](images/BookWasCreated.JPG)
  
 - Service VisitorAPI. After a new Visitor is created, information about him is published using RabbitMQ and MassTransit. BorrowedAPI and HistoryAPI consume it to update their local databases.
+
 ![Visitor was created](images/VisitorWasCreated.JPG)
  
 - Service BorrowedAPI. After the book is returned, the borrowing record is deleted and a history record is created using gRPC.
+
 ![Creating history record after returning the book](images/BorrowedRecordWasDeleated.JPG)
